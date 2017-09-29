@@ -84,38 +84,9 @@ F3::
 return
 F4::
 return
-F5::TaskbarMove("Top")
-F6::TaskbarMove("Bottom")
-	TaskbarMove(p_pos) {
-		label:="TaskbarMove_" p_pos
-
-		WinExist("ahk_class Shell_TrayWnd")
-		SysGet, s, Monitor
-
-		if (IsLabel(label)) {
-			Goto, %label%
-		}
-		return
-
-		TaskbarMove_Top:
-		TaskbarMove_Bottom:
-		WinMove(sLeft, s%p_pos%, sRight, 0)
-		return
-	}
-
-	WinMove(p_x, p_y, p_w="", p_h="", p_hwnd="") {
-		WM_ENTERSIZEMOVE:=0x0231
-		WM_EXITSIZEMOVE :=0x0232
-
-		if (p_hwnd!="") {
-			WinExist("ahk_id " p_hwnd)
-		}
-
-		SendMessage, WM_ENTERSIZEMOVE
-		;//Tooltip WinMove(%p_x%`, %p_y%`, %p_w%`, %p_h%)
-		WinMove, , , p_x, p_y, p_w, p_h
-		SendMessage, WM_EXITSIZEMOVE
-}
+F5::
+F6::
+F7::
 return
 F8::run, D:\Documents\Tools\Coding\Autohotkey\TaskbarBGone.ahk
 return
