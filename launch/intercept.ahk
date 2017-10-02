@@ -69,17 +69,17 @@ Numpad6::return
 Numpad7::return
 Numpad8::return
 Numpad9::return
-Enter::run, ahk_exe ConEmu64.exe
-return
+Enter::return
 Delete::return
 Space::run, explorer.exe
 return
 
 F1::
-IfWinNotExist, ahk_class MozillaWindowClass
-	run, firefox.exe
-if WinActive("ahk_class MozillaWindowClass")
-	send, ^{tab}
-else
-	WinActivate ahk_class MozillaWindowClass
-return
+	IfWinNotExist, ahk_class MozillaWindowClass
+		run, firefox.exe
+	if WinActive("ahk_class MozillaWindowClass")
+		send, ^{tab}
+	else
+		WinActivate ahk_class MozillaWindowClass
+	return
+return 
