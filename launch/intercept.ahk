@@ -69,7 +69,8 @@ Numpad6::return
 Numpad7::return
 Numpad8::return
 Numpad9::return
-Enter::return
+Enter::run, C:\Program Files (x86)\cmder\Cmder.exe
+return
 Delete::return
 Space::run, explorer.exe
 return
