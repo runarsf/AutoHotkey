@@ -6,8 +6,16 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance
 menu, tray, icon, shell32.dll, 246 					; Changes the tray icon
-
 SetCapsLockState, AlwaysOff
+
+ToolTip, host.ahk launched, 980, 1070											; Display tooltip
+SetTimer, RemoveToolTip, 5000													; Set the length of the tooltip
+return
+
+RemoveToolTip:																	; Define RemoveToolTip
+SetTimer, RemoveToolTip, Off
+ToolTip																			; Removes the tooltip
+return
 
 ; #InstallKeybdHook
 

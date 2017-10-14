@@ -1,7 +1,6 @@
 ﻿; ---------------------------------
 ; Script behaviour
 ; ---------------------------------
-
 #SingleInstance Force													; Skip replace dialog.
 SetTitleMatchMode 2														; A window's title can contain WinTitle anywhere inside it to be a match.
 SetWorkingDir %A_ScriptDir%												; Ensures a persistent working directory.
@@ -22,4 +21,13 @@ sleep, 5000
 	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\not-mine	; Changes the working directory
 	run, multidesk.ahk														; Runs the multidesk script
 sleep, 150
-exit																		; Ends this script
+
+ToolTip, Starting processes, 980, 1070											; Display tooltip
+SetTimer, RemoveToolTip, 5000													; Set the length of the tooltip
+return
+
+RemoveToolTip:																	; Define RemoveToolTip
+SetTimer, RemoveToolTip, Off
+ToolTip																			; Removes the tooltip
+
+ExitApp																		; Ends this script

@@ -3,6 +3,15 @@ DesktopCount = 2        ; Windows starts with 2 desktops at boot
 CurrentDesktop = 1      ; Desktop count is 1-indexed (Microsoft numbers them this way)
 menu, tray, icon, shell32.dll, 257												; Changes the tray icon
 
+ToolTip, multidesk.ahk launched, 980, 1070											; Display tooltip
+SetTimer, RemoveToolTip, 5000													; Set the length of the tooltip
+return
+
+RemoveToolTip:																	; Define RemoveToolTip
+SetTimer, RemoveToolTip, Off
+ToolTip																			; Removes the tooltip
+return
+
 ;
 ; This function examines the registry to build an accurate list of the current virtual desktops and which one we're currently on.
 ; Current desktop UUID appears to be in HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\SessionInfo\1\VirtualDesktops
