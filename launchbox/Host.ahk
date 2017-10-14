@@ -5,6 +5,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance
+menu, tray, icon, shell32.dll, 246 					; Changes the tray icon
 
 SetCapsLockState, AlwaysOff
 
