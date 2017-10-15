@@ -8,7 +8,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 menu, tray, icon, shell32.dll, 246 					; Changes the tray icon
 SetCapsLockState, AlwaysOff
 
-ToolTip, host.ahk launched, 980, 1070											; Display tooltip
+ToolTip, host.ahk launched, 1910, 1070											; Display tooltip
 SetTimer, RemoveToolTip, 5000													; Set the length of the tooltip
 return
 

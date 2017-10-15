@@ -36,7 +36,7 @@ gui_autoexecute:
 ;-------------------------------------------------------------------------------
 ; LAUNCH GUI
 ;-------------------------------------------------------------------------------
-Ctrl & Space::
+# & Space::
 gui_spawn:
     if gui_state != closed
     {
@@ -51,7 +51,7 @@ gui_spawn:
     Gui, Color, 1d1f21, 282a2e
     Gui, +AlwaysOnTop -SysMenu +ToolWindow -caption +Border
     Gui, Font, s11, Segoe UI
-    Gui, Add, Text, %gui_control_options% vgui_main_title, ¯\_(ツ)_/¯
+    Gui, Add, Text, %gui_control_options% vgui_main_title, Launchbox
     Gui, Font, s10, Segoe UI
     Gui, Add, Edit, %gui_control_options% vPedersen gFindus
     Gui, Show,, myGUI

@@ -14,15 +14,15 @@ sleep, 10000
 sleep, 5000
 	SetWorkingDir, D:\Documents\locker										; Changes the working directory
 	run, locker.exe															; Runs the locker executable
-sleep, 5000
-	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\launchbox	; Changes the working directory
-	run, Host.ahk															; Runs the host sctipt
+;sleep, 5000
+;	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\launchbox	; Changes the working directory
+;	run, host.ahk															; Runs the host sctipt
 sleep, 5000
 	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\not-mine	; Changes the working directory
 	run, multidesk.ahk														; Runs the multidesk script
 sleep, 150
 
-ToolTip, Starting processes, 980, 1070											; Display tooltip
+ToolTip, Starting processes, 1910, 1070											; Display tooltip
 SetTimer, RemoveToolTip, 5000													; Set the length of the tooltip
 return
 
