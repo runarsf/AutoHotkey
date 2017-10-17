@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <gui>
 	<win win="1" pos="x330 y148 w1262 h839">
-		<control h="795" w="1014" x="0" y="0" type="Scintilla" file="C:\Users\runarsf\Documents\GitHub\AutoHotkey\rufus\lenny.ahk" hwnd="397058" ra="788072" last="1"></control>
-		<control h="358" w="248" x="1014" y="0" lp="0.80337079" type="Project Explorer" ba="1445118" hwnd="788072"></control>
-		<control h="437" w="248" x="1014" y="358" lp="0.80337079" tp="0.45045045" type="Code Explorer" hwnd="1445118"></control></win>
+		<control h="795" w="1014" x="0" y="0" type="Scintilla" file="C:\Users\runarsf\Documents\GitHub\AutoHotkey\rufus\lenny.ahk" hwnd="2492670" ra="5245180" last="1"></control>
+		<control h="358" w="248" x="1014" y="0" lp="0.80337079" type="Project Explorer" ba="1115446" hwnd="5245180"></control>
+		<control h="437" w="248" x="1014" y="358" lp="0.80337079" tp="0.45045045" type="Code Explorer" hwnd="1115446"></control></win>
 </gui>
