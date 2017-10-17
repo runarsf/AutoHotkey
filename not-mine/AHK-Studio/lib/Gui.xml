@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<gui>
+	<win win="1" pos="x578 y116 w1246 h839" max="1">
+		<control h="651" w="1097" x="0" y="0" type="Scintilla" file="C:\Users\Runar\Documents\GitHub\AutoHotkey\rufus\lenny.ahk" hwnd="329318" ra="1705470" last="1"></control>
+		<control h="293" w="269" x="1097" y="0" lp="0.80337079" type="Project Explorer" ba="2623052" hwnd="1705470"></control>
+		<control h="358" w="269" x="1097" y="293" lp="0.80337079" tp="0.45045045" type="Code Explorer" hwnd="2623052"></control></win>
+</gui>
