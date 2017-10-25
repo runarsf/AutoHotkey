@@ -11,13 +11,15 @@ SendMode Input															; Recommended for new scripts due to its superior s
 ; ---------------------------------
 sleep, 10000		
 	run, lenny.ahk															; Runs the lenny script
-sleep, 5000
+sleep, 1000
+	run, intercept.ahk
+sleep, 1000
 	SetWorkingDir, D:\Documents\locker										; Changes the working directory
 	run, locker.exe															; Runs the locker executable
 ;sleep, 5000
 ;	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\launchbox	; Changes the working directory
 ;	run, host.ahk															; Runs the host sctipt
-sleep, 5000
+sleep, 1000
 	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\not-mine	; Changes the working directory
 	run, multidesk.ahk														; Runs the multidesk script
 sleep, 150
