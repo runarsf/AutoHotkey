@@ -36,4 +36,4 @@ return
 ; Stuff you don't need to care about
 ; #####################################
 	
-; Esc::ExitApp
+Esc::ExitApp
