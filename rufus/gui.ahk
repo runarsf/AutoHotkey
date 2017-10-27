@@ -5,10 +5,9 @@ return
 
 gui:
 	Gui, Font, s10, Source Code Pro
-	Gui, Add, Edit, r50 w680 vFileEdit,
+	Gui, Add, Edit, r35 w550 vFileEdit,
 	Gui, Font, s10, Consolas
 	Gui, Add, Button, gSaveButton, Save
-	Gui, Show,, AHK gui test
 return
 
 bold:
@@ -16,7 +15,7 @@ bold:
 	Gui, Destroy
 	Gui, Add, Text,, %contents%
 	Gui, Font, s10, Consolas
-	Gui, Show, h%A_ScreenHeight% w300, bold.rsf (read-only)
+	Gui, Show, w450, bold.rsf (read-only)
 return
 
 ^s::
@@ -36,4 +35,4 @@ return
 ; Stuff you don't need to care about
 ; #####################################
 	
-Esc::ExitApp
+^Esc::ExitApp
