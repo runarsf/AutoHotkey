@@ -8,6 +8,7 @@ gui:
 	Gui, Add, Edit, r35 w550 vFileEdit,
 	Gui, Font, s10, Consolas
 	Gui, Add, Button, gSaveButton, Save
+	Gui, Show,, allahu
 return
 
 bold:
@@ -34,5 +35,20 @@ return
 ; #####################################
 ; Stuff you don't need to care about
 ; #####################################
-	
-^Esc::ExitApp
+
+~Esc::
+If EscIsPressed
+	return
+EscIsPressed := true
+SetTimer, WaitForRelease, 500
+return
+
+~Esc Up::
+SetTimer, WaitForRelease, Off
+EscIsPressed := false
+return
+
+WaitForRelease:
+SetTimer, WaitForRelease, Off
+ExitApp
+return

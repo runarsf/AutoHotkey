@@ -69,6 +69,8 @@ Numpad8::return
 Numpad9::return
 Enter::run, C:\Program Files (x86)\cmder\Cmder.exe
 Delete::return
+PrintScreen::return
+ScrollLock::return
 Space::run, explorer.exe
 
 F1::
@@ -80,3 +82,29 @@ F1::
 		WinActivate ahk_class MozillaWindowClass
 	return
 return 
+
+
+/*
+$NumpadMult::
+while GetKeyState("NumpadMult","P")
+	loop
+	{
+	count++
+	tooltip, %count%
+	sleep, 200
+	
+	}
+return
+
+$NumpadMult Up::
+BreakLoop = 1
+count = 0
+return
+
+if (count > 200)
+	MsgBox, count over 200
+	count := 0
+	tooltip
+tooltip
+return
+*/
