@@ -9,7 +9,7 @@ b::return
 c::return
 d::return
 e::return
-f::return
+;f::return
 g::return
 h::return
 i::return
@@ -46,7 +46,7 @@ z::return
 8::return
 9::return
 ;F1::return
-F2::return
+;F2::return
 F3::return
 F4::return
 F5::return
@@ -73,7 +73,7 @@ PrintScreen::return
 ScrollLock::return
 Space::run, explorer.exe
 
-F1::
+F::
 	IfWinNotExist, ahk_class MozillaWindowClass
 		run, firefox.exe
 	if WinActive("ahk_class MozillaWindowClass")
@@ -82,6 +82,42 @@ F1::
 		WinActivate ahk_class MozillaWindowClass
 	return
 return 
+
+F1::TaskbarMove("Top")
+F2::TaskbarMove("Bottom")
+
+
+
+TaskbarMove(p_pos) {
+    label:="TaskbarMove_" p_pos
+
+    WinExist("ahk_class Shell_TrayWnd")
+    SysGet, s, Monitor
+
+    if (IsLabel(label)) {
+        Goto, %label%
+    }
+    return
+
+    TaskbarMove_Top:
+    TaskbarMove_Bottom:
+    WinMove(sLeft, s%p_pos%, sRight, 0)
+    return
+}
+
+WinMove(p_x, p_y, p_w="", p_h="", p_hwnd="") {
+    WM_ENTERSIZEMOVE:=0x0231
+    WM_EXITSIZEMOVE :=0x0232
+
+    if (p_hwnd!="") {
+        WinExist("ahk_id " p_hwnd)
+    }
+
+    SendMessage, WM_ENTERSIZEMOVE
+    ;//Tooltip WinMove(%p_x%`, %p_y%`, %p_w%`, %p_h%)
+    WinMove, , , p_x, p_y, p_w, p_h
+    SendMessage, WM_EXITSIZEMOVE
+}
 
 
 /*
