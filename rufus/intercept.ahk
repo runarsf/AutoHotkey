@@ -19,7 +19,10 @@ l::return
 m::return
 n::run, C:\Program Files\Notepad++\notepad++.exe
 return
-o::run, %UserProfile%\AppData\Local\osu!\osu!.exe
+o::
+	run, %UserProfile%\AppData\Local\osu!\osu!.exe
+	sleep, 2500
+	run, D:\Documents\Tools\osu!InputDelayRemover\osu!InputDelayRemover.exe
 return
 p::return
 q::return
