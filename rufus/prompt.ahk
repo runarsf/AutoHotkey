@@ -35,6 +35,10 @@ done:
 	{
 	contents := "shutdown /a"
 	}
+	if (contents = "startup")
+	{
+	contents := "start shell:startup"
+	}
 	run, cmd.exe /k prompt rufus$G & %contents%
 	Gui, Destroy
 	ExitApp
