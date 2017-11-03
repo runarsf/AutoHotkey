@@ -6,22 +6,15 @@ Gosub, gui
 return
 
 gui:
-	Gui, +AlwaysOnTop +ToolWindow +LastFound +Caption
-	Gui, Color, 2f343f, 434852
-	WinSet, Transparent, 200
-	Gui, Font, s10 cWhite, Source Code Pro,
-	Gui, add, Edit, r1 w150 vFileEdit +0x100 HwndEditID,
-	Gui, Show,, ( ͡° ͜ʖ ͡°) CMD Launcher
-	loop
+Gui, +AlwaysOnTop +ToolWindow +LastFound +Caption
+Gui, Color, 2f343f, 434852
+WinSet, Transparent, 200
+Gui, Font, s10 cWhite, Source Code Pro,
+Gui, add, Edit, r1 w150 vFileEdit +0x100 HwndEditID,
+Gui, Show,, ( ͡° ͜ʖ ͡°) CMD Launcher
+loop
 	WinWait, ahk_class AutoHotkeyGUI
-	WinActivate, ahk_class AutoHotkeyGUI
-	if !WinActive("ahk_class AutoHotkeyGUI")
-		LButton::
-		MButton::
-		RButton::
-	Gui, Destroy
-ExitApp
-return
+WinActivate, ahk_class AutoHotkeyGUI
 Enter::Gosub, SaveButton
 NumpadEnter::Gosub, SaveButton
 return
@@ -51,3 +44,12 @@ ExitApp
 return
 
 Esc::ExitApp
+
+#IfWinNotActive, ahk_class AutoHotkeyGUI
+{
+~LButton::
+~LButton Up::
+Gui, Destroy
+ExitApp
+}
+return
