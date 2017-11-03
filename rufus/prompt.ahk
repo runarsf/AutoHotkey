@@ -11,37 +11,39 @@ gui:
 	WinSet, Transparent, 200
 	Gui, Font, s10 cWhite, Source Code Pro,
 	Gui, add, Edit, r1 w150 vFileEdit +0x100 HwndEditID,
-	Gui, Show,, ( ͡° ͜ʖ ͡°)
+	Gui, Show,, ( ͡° ͜ʖ ͡°) CMD Launcher
 	loop
-	{
 	WinWait, ahk_class AutoHotkeyGUI
 	WinActivate, ahk_class AutoHotkeyGUI
-	}
-	Enter::Gosub, SaveButton
-	NumpadEnter::Gosub, SaveButton
+	if !WinActive("ahk_class AutoHotkeyGUI")
+		LButton::
+		MButton::
+		RButton::
+	Gui, Destroy
+ExitApp
+return
+Enter::Gosub, SaveButton
+NumpadEnter::Gosub, SaveButton
 return
 
 SaveButton:
-	Gui, Submit, NoHide
-	FileDelete, command.ini
-	FileAppend, %FileEdit%, command.ini
-	Gosub, done
+Gui, Submit, NoHide
+FileDelete, command.log
+FileAppend, %FileEdit%, command.log
+Gosub, done
 return
 
 done:
-	FileRead, contents, %A_ScriptDir%\command.ini
-	
-	if (contents = "sha")
-	{
+FileRead, contents, %A_ScriptDir%\command.log
+
+if (contents = "sha")
 	contents := "shutdown /a"
-	}
-	if (contents = "startup")
-	{
+if (contents = "startup")
 	contents := "start shell:startup"
-	}
-	run, cmd.exe /k prompt rufus$G & %contents%
-	Gui, Destroy
-	ExitApp
+run, cmd.exe /k prompt rufus$G & color 06 & %contents%
+Gui, Destroy
+FileDelete, command.log
+ExitApp
 return
 
 GuiClose:
