@@ -11,7 +11,7 @@ Gui, Color, 2f343f, 434852
 WinSet, Transparent, 200
 Gui, Font, s10 cWhite, Source Code Pro,
 Gui, add, Edit, r1 w150 vFileEdit,
-Gui, Show,, ( ͡° ͜ʖ ͡°) CMD Launcher
+Gui, Show,, CMD Launcher
 Enter::Gosub, SaveButton
 NumpadEnter::Gosub, SaveButton
 return
