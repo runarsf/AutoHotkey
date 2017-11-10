@@ -22,7 +22,9 @@ return
 o::
 	run, %UserProfile%\AppData\Local\osu!\osu!.exe
 	sleep, 2500
-	;run, D:\Documents\Tools\osu!InputDelayRemover\osu!InputDelayRemover.exe
+	if !WinExist("ahk_exe osu!InputDelayRemover.exe")
+		run, D:\Documents\Tools\osu!InputDelayRemover\osu!InputDelayRemover.exe
+	return
 return
 p::return
 q::return
