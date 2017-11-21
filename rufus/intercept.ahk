@@ -22,8 +22,8 @@ return
 o::
 	run, %UserProfile%\AppData\Local\osu!\osu!.exe
 	sleep, 2500
-	if !WinExist("ahk_exe osu!InputDelayRemover.exe")
-		run, D:\Documents\Tools\osu!InputDelayRemover\osu!InputDelayRemover.exe
+	;if !WinExist("ahk_exe osu!InputDelayRemover.exe")
+		;run, D:\Documents\Tools\osu!InputDelayRemover\osu!InputDelayRemover.exe
 	return
 return
 p::return
@@ -33,7 +33,7 @@ return
 s::run, shell:startup
 return
 t::return
-u::return
+u::run, control appwiz.cpl
 v::return
 w::return
 x::sendInput, lmao xd lol rofl ialmaorn roflmao XD lawl Cx {Enter}
