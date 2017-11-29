@@ -10,7 +10,7 @@ gui:
 Gui, +AlwaysOnTop +LastFound +Caption -dpiscale
 Gui, Font, s10 cBlack, Source Code Pro,
 
-If (%A_ScreenHeight% = 768) {
+If (%A_ScreenHeight% = 1080) {
 		Gui, Add, Edit, x720 y540 w256 r1 vSearch
 	} else {
 		Gui, Add, Edit, x555 y383 w256 r1 vSearch
