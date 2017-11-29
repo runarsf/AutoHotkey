@@ -10,8 +10,11 @@ gui:
 Gui, +AlwaysOnTop +LastFound +Caption -dpiscale
 Gui, Font, s10 cBlack, Source Code Pro,
 
-Gui, Add, Edit, x960 y540 r1 vSearch
-
+If (%A_ScreenHeight% = 768) {
+		Gui, Add, Edit, x720 y540 w256 r1 vSearch
+	} else {
+		Gui, Add, Edit, x555 y383 w256 r1 vSearch
+	}
 Gui, Show, h%A_ScreenHeight% w%A_ScreenWidth%, startpage
 return
 
