@@ -5,5 +5,22 @@ SetWorkingDir %A_ScriptDir%																				; Ensures a persistent working di
 DetectHiddenWindows, On																					; Enables the detection of hidden windows
 #EscapeChar ¤
 CoordMode, Mouse, Screen
-menu, tray, Icon, %A_ScriptDir%\icons\cmd.ico
 
+gui:
+Gui, +AlwaysOnTop +LastFound +Caption -dpiscale
+Gui, Font, s10 cBlack, Source Code Pro,
+
+Gui, Add, Edit, x960 y540 r1 vSearch
+
+Gui, Show, h%A_ScreenHeight% w%A_ScreenWidth%, startpage
+return
+
+
+Launch:
+Gui, Submit, NoHide
+Gui, Destroy
+return
+
+GuiClose:
+ExitApp
+return
