@@ -52,3 +52,4 @@ WaitForRelease:
 SetTimer, WaitForRelease, Off
 ExitApp
 return
+
