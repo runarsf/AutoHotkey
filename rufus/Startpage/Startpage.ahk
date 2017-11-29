@@ -16,12 +16,14 @@ If (%A_ScreenHeight% = 1080) {
 		Gui, Add, Edit, x555 y383 w256 r1 vSearch
 }
 
-[color=blue]Gui, Add, Button, Default, OK
-GuiControl, Hide, OK[/color]
+Gui, Add, Button, Default, OK
+GuiControl, Hide, OK
 
 Gui, Show, h%A_ScreenHeight% w%A_ScreenWidth%, startpage
 return
 
-GuiClose:
+GuiClose: 
+ButtonOK: 
+Gui, Submit 
 ExitApp
-return
+Return
