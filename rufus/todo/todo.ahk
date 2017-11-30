@@ -6,24 +6,33 @@ DetectHiddenWindows, On																					; Enables the detection of hidden wi
 #EscapeChar ¤
 CoordMode, Mouse, Screen
 
+;https://autohotkey.com/docs/commands/Gui.htm
+;https://autohotkey.com/docs/commands/GuiControls.htm
+
 gui:
-Gui, +AlwaysOnTop +LastFound +Caption
+Gui, +LastFound +Caption
 Gui, Color, 2f343f, 434852
 WinSet, Transparent, 200
-Gui, Font, s10 cBlack, Source Code Pro,
-Gui, Add, Tab2,, Application|Finished
+Gui, Font, s10 cBlack, Source code pro,
+Gui, Add, Tab2,, Tasks|Finished
 
-Gui, Tab, Application,, Exact
-Gui, Color, 2f343f, 000000
+Gui, Tab, Tasks,, Exact
+Gui, Color, 2f343f, 2f343f
+Gui, Add, Checkbox, vCheck, Task
 
-Gui, Add, Button, Default, OK
-GuiControl, Hide, OK
+Gui, Tab, Finished,, Exact
+Gui, Color, 2f343f, 2f343f
+
+;Gui, Add, Button, Default, OK
+;GuiControl, Hide, OK
 
 Gui, Show,, ToDo
 return
 
 GuiClose: 
 ButtonOK: 
-Gui, Submit 
+Gui, Submit
+FileDelete, contents.ini
+FileAppend, True: %Check%, contents.ini,
 ExitApp
 return
