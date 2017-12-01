@@ -10,6 +10,7 @@ CoordMode, Mouse, Screen
 ;https://autohotkey.com/docs/commands/GuiControls.htm
 
 gui:
+IniRead, MyVar, contents.ini, List, True,
 Gui, +LastFound +Caption
 Gui, Color, 2f343f, 434852
 WinSet, Transparent, 200
@@ -33,6 +34,6 @@ GuiClose:
 ButtonOK: 
 Gui, Submit
 FileDelete, contents.ini
-FileAppend, True: %Check%, contents.ini,
+FileAppend, [List]¤nTrue: %Check%, contents.ini,
 ExitApp
 return
