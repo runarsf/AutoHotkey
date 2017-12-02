@@ -20,18 +20,24 @@ Gui, Add, Tab2,, Tasks|Finished
 Gui, Tab, Tasks,, Exact
 Gui, Color, 2f343f, 2f343f
 Gui, Add, Checkbox, vCheck, Task
+Gui, Add, Button, Default, OK
+GuiControl, Hide, OK
 
 Gui, Tab, Finished,, Exact
 Gui, Color, 2f343f, 2f343f
 
-;Gui, Add, Button, Default, OK
-;GuiControl, Hide, OK
-
 Gui, Show,, ToDo
+return
+ 
+ButtonOK: 
+Gui, Submit
+FileDelete, contents.ini
+FileAppend, [List]¤nTrue: %Check%, contents.ini,
+Gui, Destroy
+Gosub, gui
 return
 
 GuiClose: 
-ButtonOK: 
 Gui, Submit
 FileDelete, contents.ini
 FileAppend, [List]¤nTrue: %Check%, contents.ini,
