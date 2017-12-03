@@ -8,9 +8,9 @@ CoordMode, Mouse, Screen
 
 
 gui:
-Gui, +LastFound +Caption
+Gui, +AlwaysOnTop +LastFound +Caption
 Gui, Color, 2f343f, 434852
-WinSet, Transparent, 240
+WinSet, Transparent, %bob%
 Gui, Font, s10 cBlack, Source code pro,
 Gui, Add, Tab2, w390 h600, Tasks|Finished
 
@@ -33,8 +33,10 @@ Gui, Show,, ToDo
 IniRead, WinPossX, config.ini, Settings, WinPosX,
 IniRead, WinPossY, config.ini, Settings, WinPosY,
 WinMove, ahk_exe AutoHotkey.exe,, %WinPossX%, %WinPossY%
+
+
+
 return
- 
  
  
  
