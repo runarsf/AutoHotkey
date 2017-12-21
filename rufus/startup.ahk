@@ -14,7 +14,7 @@ sleep, 10000
 sleep, 1000
 	run, intercept.ahk
 sleep, 1000
-	SetWorkingDir, D:\Documents\locker										; Changes the working directory
+	SetWorkingDir, C:\Users\runarsf\Documents\locker										; Changes the working directory
 	run, locker.exe															; Runs the locker executable
 ;sleep, 5000
 ;	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\launchbox	; Changes the working directory
