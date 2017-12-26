@@ -19,9 +19,9 @@ sleep, 1000
 ;sleep, 5000
 ;	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\launchbox	; Changes the working directory
 ;	run, host.ahk															; Runs the host sctipt
-sleep, 1000
-	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\bold	; Changes the working directory
-	run, multidesk.ahk														; Runs the multidesk script
+;sleep, 1000
+;	SetWorkingDir, C:\Users\runarsf\Documents\GitHub\AutoHotkey\bold	; Changes the working directory
+;	run, multidesk.ahk														; Runs the multidesk script
 sleep, 150
 
 ToolTip, Starting processes, 1910, 1070											; Display tooltip
