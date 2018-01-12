@@ -11,8 +11,8 @@ SendMode Input															; Recommended for new scripts due to its superior s
 ; ---------------------------------
 sleep, 10000		
 	run, lenny.ahk															; Runs the lenny script
-sleep, 1000
-	run, intercept.ahk
+;sleep, 1000
+;	run, intercept.ahk
 sleep, 1000
 	SetWorkingDir, C:\Users\runarsf\Documents\locker										; Changes the working directory
 	run, locker.exe															; Runs the locker executable
