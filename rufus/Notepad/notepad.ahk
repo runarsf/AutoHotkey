@@ -35,6 +35,9 @@ return
 ; #####################################
 ; Stuff you don't need to care about
 ; #####################################
+GuiClose:
+ExitApp
+return
 
 ~Esc::
 If EscIsPressed
