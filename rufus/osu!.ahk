@@ -36,11 +36,6 @@ return
 
 AppsKey::
 IniRead, mods, config.ini, txtmods, osumods
-;SendInput, /msg Tillerino
-;sleep, 100
-;sendInput, {Enter Down}
-;sleep, 25
-;sendInput, {Enter Up}
 sleep, 100
 SendInput, {!}recommend %mods%
 sleep, 100
@@ -91,8 +86,8 @@ return
 	return
 */
 Insert::return
+z::Numpad2
+x::Numpad1
 Numpad9::Escape
 NumpadDot::LButton
-Z::Numpad2
-X::Numpad1
 #IfWinActive
