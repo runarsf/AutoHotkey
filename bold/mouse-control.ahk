@@ -42,20 +42,12 @@ return
 ; x::Numpad1
 ; z::Numpad2
 
-NumpadIns::
-MouseClick, left
-return
+NumpadIns::MouseClick, left
 
-NumpadDel::
-MouseClick, right
-return
+NumpadDel::MouseClick, right
 
-Numpad0::
-MouseClick, left
-return
+Numpad0::MouseClick, left
 
-NumpadDot::
-MouseClick, right
-return
+NumpadDot::MouseClick, right
 
 Esc::ExitApp
