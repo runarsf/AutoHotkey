@@ -37,9 +37,6 @@ ExitApp
 return
 
 
-
-
-
 GuiClose:
 ExitApp
 return

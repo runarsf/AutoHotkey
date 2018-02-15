@@ -27,15 +27,15 @@ return
 GuiClose:
 ButtonOK:
 Gui, Submit, Nohide
-IniWrite, %FileEdit%, config.ini, txtmods, osumods
+IniWrite, %FileEdit%, osumods.ini, txtmods, osumods
 Gui, Destroy
 return
 
 #IfWinActive, ahk_exe osu!.exe
-;#a::WinMove, ahk_exe osu!.exe,, 73, 44,,
+;#a::WinMove, ahk_exe osu!.exe,, 73, 44,, #For a set osu! resolution
 
 AppsKey::
-IniRead, mods, config.ini, txtmods, osumods
+IniRead, mods, osumods.ini, txtmods, osumods
 sleep, 100
 SendInput, {!}recommend %mods%
 sleep, 100
@@ -46,45 +46,45 @@ sleep, 5000
 return
 
 
-/*
-	~LButton Up::
-	CoordMode, ToolTip, Screen
-	tooltip, %gmode%, 79, 46
-	Gosub, buklau
-	sleep, 1200
-	tooltip
-	return
-	buklau:
-	CoordMode, Mouse, Screen
-	MouseGetPos, mposX, mposY,,
+
+Shift & ~LButton Up::
+CoordMode, ToolTip, Screen
+tooltip, %gmode%, 79, 46
+Gosub, buklau
+sleep, 1200
+tooltip
+return
+buklau:
+CoordMode, Mouse, Screen
+MouseGetPos, mposX, mposY,,
 	
-	if (mposX > 365) and (mposX < 478) and (mposY > 947) and (mposY < 1056)
-	{
-		if (gmode = "")
-			gmode := "osu!"
-		else if (gmode = "mania")
-			gmode := "taiko"
-		else if (gmode = "taiko")
-			gmode := "ctb"
-		else if (gmode = "ctb")
-			gmode := "osu!"
-		else if (gmode = "osu!")
-			gmode := "mania"
-		sleep, 30
-		sendInput, {LButton}
-		sleep, 16
-		sendInput, {Control Down}
-		sleep, 16
-		sendInput, {Backspace}
-		sleep, 16
-		sendInput, {Control Up}
-		sleep, 16
-		sendInput, mode=%gmode%
-	} else {
-		sendInput, {LButton Up}
-	}
-	return
-*/
+if (mposX > 365) and (mposX < 478) and (mposY > 947) and (mposY < 1056)
+{
+	if (gmode = "")
+		gmode := "osu!"
+	else if (gmode = "mania")
+		gmode := "taiko"
+	else if (gmode = "taiko")
+		gmode := "ctb"
+	else if (gmode = "ctb")
+		gmode := "osu!"
+	else if (gmode = "osu!")
+		gmode := "mania"
+	sleep, 30
+	sendInput, {LButton}
+	sleep, 16
+	sendInput, {Control Down}
+	sleep, 16
+	sendInput, {Backspace}
+	sleep, 16
+	sendInput, {Control Up}
+	sleep, 16
+	sendInput, mode=%gmode%
+} else {
+	sendInput, {LButton Up}
+}
+return
+
 Insert::return
 z::Numpad2
 x::Numpad1

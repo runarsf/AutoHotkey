@@ -7,7 +7,6 @@ DetectHiddenWindows, On																					; Enables the detection of hidden wi
 CoordMode, Mouse, Screen
 menu, tray, Icon, %A_ScriptDir%\todo.ico
 
-
 gui:
 Gui, +AlwaysOnTop +LastFound +Caption
 Gui, Color, 2f343f, 434852
@@ -44,7 +43,7 @@ IniRead, WinPossX, config.ini, Settings, WinPosX,
 IniRead, WinPossY, config.ini, Settings, WinPosY,
 WinMove, ahk_exe AutoHotkey.exe,, %WinPossX%, %WinPossY%
 return
- 
+
 
 ButtonOK:
 Gui, Submit, NoHide
@@ -59,5 +58,27 @@ Gui, Submit
 IniWrite, %Key%, config.ini, Tasks, AmCheck
 IniWrite, %Task%, config.ini, Tasks, Flapcunt
 reload
+ExitApp
+return
+
+/*
+	*********************************************
+	* Hold Escape for {} seconds to exit script *
+	* - Activates at 500ms                      *
+	*********************************************
+*/
+
+~Esc::
+If EscIsPressed
+	return
+EscIsPressed := true
+SetTimer, WaitForRelease, 500
+return
+~Esc Up::
+SetTimer, WaitForRelease, Off
+EscIsPressed := false
+return
+WaitForRelease:
+SetTimer, WaitForRelease, Off
 ExitApp
 return
