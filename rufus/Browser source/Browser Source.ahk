@@ -1,44 +1,39 @@
 ﻿#SingleInstance, force
-#MaxHotkeysPerInterval,2000
+#MaxHotkeysPerInterval, 2000
+#InstallKeybdHook
+#InstallMouseHook
 CoordMode, Mouse, Screen
 SetWorkingDir, %A_ScriptDir%
 menu, tray, Icon, %A_ScriptDir%\browser.ico
 
 gui:
 ComObjError(false)
-ComObjError(disable)
 IniRead, site, config.ini, Main, site,
 
 Gui, +LastFound +Caption +Resize
 Gui, Color, 252525, 303030
-
 Gui, Font, s10 cWhite, Source Code Pro,
-Gui, Add, Edit, w1280 r1 vURLBar,
 
-Gui Add, ActiveX, w1280 h720 vWB, Mozilla.Browser
+Gui, Add, Edit, w1280 r1 vURLBar,
+/*	HIDDEN OK BUTTON
+	*/
+Gui, Add, Button, x0 y0 Hidden Default, OK
+
+/*	STARTPAGE
+	 - ActiveX decides window size
+*/
+sw := 100
+sh := 100
+Gui Add, ActiveX, w%A_ScreenWidth% h%A_ScreenHeight% vWB, Mozilla.Browser
 URL:="google.com"
 WB.Navigate(URL)
 
 Gui, Font, s9 cBlack, Segoe UI,
-
-Gui, Add, StatusBar,,
-SB_SetIcon("cmd.ico")
-
 Gui, Show,, browser-source
 return
 
-/*
-loop {
-	MouseGetPos, Xpos, Ypos,
-	SB_SetText("x:" . Xpos + 1 . " y:" . Ypos + 1)
-}
-*/
 
-#IfWinActive, ahk_exe AutoHotkey.exe
-Enter::Gosub, URLEnter
-#IfWinActive
-
-URLEnter:
+ButtonOK:
 Gui, Submit, Nohide
 WB.Navigate(URLBar)
 return
