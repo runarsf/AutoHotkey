@@ -10,28 +10,51 @@ gui:
 ComObjError(false)
 IniRead, site, config.ini, Main, site,
 
+/*	GUI setup
+*/
 Gui, +LastFound +Caption +Resize
 Gui, Color, 252525, 303030
 Gui, Font, s10 cWhite, Source Code Pro,
 
-Gui, Add, Edit, w1280 r1 vURLBar,
-/*	HIDDEN OK BUTTON
-	*/
+/*	Gets the monitor size
+*/
+SysGet, workArea, MonitorWorkArea
+workAreaWidth := workAreaRight - workAreaLeft
+workAreaHeight := workAreaBottom - workAreaTop
+wa := workAreaWidth - 43
+ha := workAreaHeight - 43
+
+/*	Create tab group
+*/
+Gui, Add, Tab3, w%wa%, Browse|Notepad|Appearance|Settings
+
+/* TAB 1
+*/
+
+Gui, Tab, 1
+Gui, Add, Edit, w%wa% r1 vURLBar,
+/*	Hidden ok button that triggers on enter
+*/
 Gui, Add, Button, x0 y0 Hidden Default, OK
 
-/*	STARTPAGE
+/*	Startpage
 	 - ActiveX decides window size
 */
-sw := 100
-sh := 100
-Gui Add, ActiveX, w%A_ScreenWidth% h%A_ScreenHeight% vWB, Mozilla.Browser
+Gui Add, ActiveX, w%A_ScreenWidth% h%A_ScreenHeight% y75 vWB, Mozilla.Browser
 URL:="google.com"
 WB.Navigate(URL)
 
+/* TAB 2
+*/
+
+Gui, Tab, 2
+Gui, Add, Edit, w%wa% h%ha% vFileEdit
+
+/* Show GUI
+*/
 Gui, Font, s9 cBlack, Segoe UI,
 Gui, Show,, browser-source
 return
-
 
 ButtonOK:
 Gui, Submit, Nohide

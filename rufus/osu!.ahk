@@ -46,8 +46,11 @@ sleep, 5000
 return
 
 
+Control & LButton Up::
+Button := LButton
+Gosub, continue
 
-Shift & ~LButton Up::
+continue:
 CoordMode, ToolTip, Screen
 tooltip, %gmode%, 79, 46
 Gosub, buklau
