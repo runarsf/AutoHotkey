@@ -10,8 +10,6 @@ CoordMode, Mouse, Screen
 
 menu, tray, Icon, %A_ScriptDir%\icons\osu!.ico
 
-+Esc::reload
-
 +AppsKey::
 gui:
 Gui, +AlwaysOnTop +ToolWindow +LastFound +Caption
