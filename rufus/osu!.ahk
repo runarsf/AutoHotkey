@@ -31,7 +31,7 @@ return
 
 #IfWinActive, ahk_exe osu!.exe
 ;#a::WinMove, ahk_exe osu!.exe,, 73, 44,, #For a set osu! resolution
-
+	
 AppsKey::
 IniRead, mods, osumods.ini, txtmods, osumods
 sleep, 100
@@ -58,7 +58,7 @@ return
 buklau:
 CoordMode, Mouse, Screen
 MouseGetPos, mposX, mposY,,
-	
+
 if (mposX > 365) and (mposX < 478) and (mposY > 947) and (mposY < 1056)
 {
 	if (gmode = "")
@@ -87,8 +87,11 @@ if (mposX > 365) and (mposX < 478) and (mposY > 947) and (mposY < 1056)
 return
 
 Insert::return
-z::Numpad2
-x::Numpad1
 Numpad9::Escape
 NumpadDot::LButton
+
+if GetKeyState("CapsLock", "P") {
+	z::Numpad2
+	x::Numpad1
+}
 #IfWinActive
