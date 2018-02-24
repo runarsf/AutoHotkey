@@ -3,5 +3,5 @@ rufus/email.ahk
 rufus/osumods.ini
 rufus/config.ini
 rufus/todo/config.ini
-rufus/EMU/files/Original
-rufus/EMU/files/PSD
+rufus/EMU/files/Original/
+rufus/EMU/files/PSD/
