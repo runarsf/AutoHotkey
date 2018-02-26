@@ -7,7 +7,8 @@ SetWorkingDir, %A_ScriptDir%
 menu, tray, Icon, %A_ScriptDir%\browser.ico
 
 gui:
-IniRead, site, config.ini, Main, site,
+IniRead, site, config.ini, Settings, site,
+IniRead, preload, config.ini, Settings, Preload,
 
 /*	GUI setup
 */
@@ -36,7 +37,7 @@ Gui, Add, Edit, w%wa% r1 vURLBar,
 Gui, Add, Button, x0 y0 Hidden Default, OK
 
 /*	Startpage
-	 - ActiveX decides window size
+	- ActiveX decides window size
 */
 Gui, Add, ActiveX, w%A_ScreenWidth% h%A_ScreenHeight% y75 vWB, Shell.Explorer
 URL:="google.com"
@@ -47,49 +48,28 @@ WB.Navigate(URL)
 */
 Gui, Tab, 2
 FileRead, Contents, %A_ScriptDir%\notepad.txt
-Gui, Add, Edit, w%wa% h%ha% vFileEdit, %contents%
-
-/* TAB 3
-*/
-Gui, Tab, 3
-Gui, Add, Checkbox, vSetPreload, Load previous Notepad text
-
-/* Show GUI
-*/
-Gui, Font, s9 cBlack, Segoe UI,
-Gui, Show,, browser-source
-return
-
-ButtonOK:
-Gui, Submit, Nohide
-WB.Navigate(URLBar)
-return
-
-GuiClose:
-Gui, Submit
-FileDelete, notepad.txt
-FileAppend, %FileEdit%, notepad.txt
-ExitApp
-return
-
-
-
-
-/* Hold ESC to exit
-*/
-~Esc::
-If EscIsPressed
+if SetPreload = 1 {
+	iscont := %contents%
+	else
+		iscont := ""
+	Gui, Add, Edit, w%wa% h%ha% vFileEdit, %iscont%
+	
+	Gui, Tab, 3
+	Gui, Add, Checkbox, vSetPreload, Load previous Notepad text
+	
+	Gui, Font, s9 cBlack, Segoe UI,
+	Gui, Show,, browser-source
 	return
-EscIsPressed := true
-SetTimer, WaitForRelease, 1000
-return
-
-~Esc Up::
-SetTimer, WaitForRelease, Off
-EscIsPressed := false
-return
-
-WaitForRelease:
-SetTimer, WaitForRelease, Off
-ExitApp
-return
+	
+	ButtonOK:
+	Gui, Submit, Nohide
+	WB.Navigate(URLBar)
+	return
+	
+	GuiClose:
+	Gui, Submit
+	FileDelete, notepad.txt
+	FileAppend, %FileEdit%, notepad.txt
+	IniWrite, %SetPreload%, config.ini, Settings, Preload
+	ExitApp
+	return
