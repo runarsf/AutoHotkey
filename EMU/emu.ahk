@@ -6,7 +6,7 @@ SetTitleMatchMode 2
 SetWorkingDir %A_ScriptDir%
 #EscapeChar ¤
 #MaxHotkeysPerInterval 2000
-Menu, Tray, Icon, %A_ScriptDir%\icon.png
+Menu, Tray, Icon, %A_ScriptDir%\icon.ico
 
 gui_main:
 Gui, +AlwaysOnTop +ToolWindow +LastFound +Caption
