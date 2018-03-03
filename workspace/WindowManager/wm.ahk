@@ -4,27 +4,11 @@ SetTitleMatchMode 2
 SetWorkingDir %A_ScriptDir%
 #EscapeChar ¤
 ;Menu, Tray, Icon, %A_ScriptDir%\icon.ico
-
-gui_main:
-Gui, +AlwaysOnTop +ToolWindow +LastFound +Caption
-Gui, Color, 2f343f, 434852
-WinSet, Transparent, 250
-
-Gui
-
-gui_show:
-Gui, Show,, Window Manager Settings
-return
-
-GuiClose:
-Gui, Submit
-ExitApp
 return
 
 ; -------------------------------------
 ; Always on top
 ; -------------------------------------
-#space::																								; Super+Space to make window stay on top.
 Winset, AlwaysOnTop, Toggle, A																			; Toggles the attribute AlwaysOnTop.
 mousegetpos, x, y, possum
 WinGet, ExStyle, ExStyle, ahk_id %possum%
@@ -40,7 +24,6 @@ return
 ; -------------------------------------
 ; Restore/Maximize with hotkey
 ; -------------------------------------
-#x::																									; Maximize/Restore active window with Super+X.
 WinGet, active_id, ID, A
 WinGet, checkmax, MinMax, A
 If(checkmax == 1) {
@@ -54,11 +37,8 @@ If(checkmax == 1) {
 return
 
 ; -------------------------------------
-; Super key to resize windows
+; Super key to resize windows 1
 ; -------------------------------------
-#RButton::
-MButton & RButton::
-
 WinGetPos,,, W, H, A
 MouseMove, W, H
 loop {
@@ -75,7 +55,9 @@ WinGetPos,,, W, H, A
 MouseMove, W/2, H/2
 return
 
-#RButton::																							; Hotkey to resize windows.
+; -------------------------------------
+; Super key to resize windows 2
+; -------------------------------------																						; Hotkey to resize windows.
 WinGetPos, , , W, H, A																					; Gets width and height from active window and stores them into the variables W and H.
 H -= 5																								; Sets the variable H to H-5.
 W -= 5																								; Sets the variable W to W-5.
@@ -94,9 +76,6 @@ return
 ; -------------------------------------
 ; Super key to move windows
 ; -------------------------------------
-#LButton::
-MButton & LButton::
-
 CoordMode, Mouse, Relative
 MouseGetPos, cur_win_x, cur_win_y, window_id
 WinGet, window_minmax, MinMax, ahk_id %window_id%
@@ -119,3 +98,34 @@ loop
 	WinMove, ahk_id %window_id%,, (cur_x - cur_win_x), (cur_y - cur_win_y)
 }
 return
+
+; #####################################
+; GUI
+; #####################################
+
+gui_main:
+Gui, +AlwaysOnTop +ToolWindow +LastFound +Caption
+Gui, Color, 2f343f, 434852
+WinSet, Transparent, 250
+
+Gui
+
+gui_show:
+Gui, Show,, Window Manager Settings
+return
+
+GuiClose:
+Gui, Submit
+ExitApp
+return
+
+; #####################################
+; KEYBINDS
+; #####################################
+
+#LButton:: ; Super key to move windows
+MButton & LButton:: ; Super key to move windows
+#space::	 ; Always on top
+#x:: ; Restore/Maximize with hotkey
+#RButton:: ; Super key to resize windows
+MButton & RButton:: ; Super key to resize windows
