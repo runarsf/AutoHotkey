@@ -19,6 +19,7 @@ else
 scan:
 WinWait, ahk_exe fman.exe
 WinActivate, ahk_exe fman.exe
+sleep, 150
 WinActivate, ahk_exe fman.exe
 
 ImageSearch, aX, aY, 0, 0, A_ScreenWidth, A_ScreenHeight, A.png
