@@ -23,13 +23,18 @@ if ( WaitForAnyKey( 10000 ) )
 	Gui, Submit, Nohide
 	if WinActive("ahk_class AutoHotkeyGUI")
 	{
-		;MsgBox, %FileEdit% × %Original%
 		IfInString, Original, %FileEdit%
 		{
 		}
-		else {
-			GuiControl, font, FileEdit, cRED
-			MsgBox, You don't wanna see me angry
+		else IfNotInString, Original, %FileEdit% 
+		{
+			if A_PriorHotkey = Enter 
+			{
+			}
+			else 
+			{
+				MsgBox, no
+			}
 		}
 	}
 	else
