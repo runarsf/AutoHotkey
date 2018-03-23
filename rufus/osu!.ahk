@@ -89,10 +89,7 @@ return
 Insert::return
 Numpad9::Escape
 NumpadDot::LButton
-/*
-if GetKeyState("CapsLock", "P") {
-	z::Numpad2
-	x::Numpad1
-}
-*/
+z::Numpad2
+x::Numpad1
+
 #IfWinActive
