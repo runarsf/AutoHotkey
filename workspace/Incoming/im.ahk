@@ -8,14 +8,14 @@ scan:
 loop
 {
 	ImageSearch, frameX, frameY, -1920, 0, A_ScreenWidth, A_ScreenHeight, frame.png
-
+	
 	if (frame >= 1) 
 	{
 		ToolTip, typing
 	}
 	else 
 	{
-		tooltip, a
+		tooltip, 何
 		sleep, 0
 	}
 }
