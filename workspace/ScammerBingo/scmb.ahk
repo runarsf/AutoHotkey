@@ -55,12 +55,12 @@ Gui, Add, Button, x%x4% y%r4% w%w% h%h% vb16, Firewall
 Gui, Add, Button, x%x1% y%r5% w%w% h%h% vb17, Scan
 Gui, Add, Button, x%x2% y%r5% w%w% h%h% vb18, Fastsupport
 Gui, Add, Button, x%x3% y%r5% w%w% h%h% vb19, Logmein
-Gui, Add, Button, x%x4% y%r5% w%w% h%h% vb20, Windows Key
+Gui, Add, Button, x%x4% y%r5% w%w% h%h% vb20, Press 1 secure business lines
 ; row 6
 Gui, Add, Button, x%x1% y%r6% w%w% h%h% vb21, Windows Key (4 flags) + R
 Gui, Add, Button, x%x2% y%r6% w%w% h%h% vb22, Secure Server
 Gui, Add, Button, x%x3% y%r6% w%w% h%h% vb23, cmd.exe
-Gui, Add, Button, x%x4% y%r6% w%w% h%h% vb24, Tree
+Gui, Add, Button, x%x4% y%r6% w%w% h%h% vb24, tree
 
 Gui, Add, Button, x%x1% y%hh% w%bw% h%x1% gBarSplit
 
