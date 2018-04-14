@@ -13,6 +13,7 @@ Gui, +LastFound +Caption
 Gui, Color, 2f343f, 434852
 WinSet, Transparent, 250
 
+count := 0
 w := 130 ; initial width
 h := 75 ; initial height
 x1 := 5 ; initial x position (columns, first button position (horizontal))
@@ -32,45 +33,46 @@ eb := hh+30+r1 ; add bottom info bar
 bw := ww-r1-r1
 
 ; row 1
-Gui, Add, Button, x%x1% y%r1% w%w% h%h% vb1, eventvwr
-Gui, Add, Button, x%x2% y%r1% w%w% h%h% vb2, Network Protection Service
-Gui, Add, Button, x%x3% y%r1% w%w% h%h% vb3, Each and Everything
-Gui, Add, Button, x%x4% y%r1% w%w% h%h% vb4, Warranty Expired
+Gui, Add, Button, x%x1% y%r1% w%w% h%h% vb1 gAdd, eventvwr
+Gui, Add, Button, x%x2% y%r1% w%w% h%h% vb2 gAdd, Network Protection Service
+Gui, Add, Button, x%x3% y%r1% w%w% h%h% vb3 gAdd, Each and Everything
+Gui, Add, Button, x%x4% y%r1% w%w% h%h% vb4 gAdd, Warranty Expired
 ; row 2
-Gui, Add, Button, x%x1% y%r2% w%w% h%h% vb5, Virus
-Gui, Add, Button, x%x2% y%r2% w%w% h%h% vb6, Errors and Warnings
-Gui, Add, Button, x%x3% y%r2% w%w% h%h% vb7, Kevin
-Gui, Add, Button, x%x4% y%r2% w%w% h%h% vb8, netstat
+Gui, Add, Button, x%x1% y%r2% w%w% h%h% vb5 gAdd, Virus
+Gui, Add, Button, x%x2% y%r2% w%w% h%h% vb6 gAdd, Errors and Warnings
+Gui, Add, Button, x%x3% y%r2% w%w% h%h% vb7 gAdd, Kevin
+Gui, Add, Button, x%x4% y%r2% w%w% h%h% vb8 gAdd, netstat
 ; row 3
-Gui, Add, Button, x%x1% y%r3% w%w% h%h% vb9, Stopped Services
-Gui, Add, Button, x%x2% y%r3% w%w% h%h% vb10, Bob
-Gui, Add, Button, x%x3% y%r3% w%w% h%h% vb11, Lifetime
-Gui, Add, Button, x%x4% y%r3% w%w% h%h% vb12, Not in India
+Gui, Add, Button, x%x1% y%r3% w%w% h%h% vb9 gAdd, Stopped Services
+Gui, Add, Button, x%x2% y%r3% w%w% h%h% vb10 gAdd, Bob
+Gui, Add, Button, x%x3% y%r3% w%w% h%h% vb11 gAdd, Lifetime
+Gui, Add, Button, x%x4% y%r3% w%w% h%h% vb12 gAdd, Not in India
 ; row 4
-Gui, Add, Button, x%x1% y%r4% w%w% h%h% vb13, One time charge
-Gui, Add, Button, x%x2% y%r4% w%w% h%h% vb14, Infection
-Gui, Add, Button, x%x3% y%r4% w%w% h%h% vb15, Payment
-Gui, Add, Button, x%x4% y%r4% w%w% h%h% vb16, Firewall
+Gui, Add, Button, x%x1% y%r4% w%w% h%h% vb13 gAdd, One time charge
+Gui, Add, Button, x%x2% y%r4% w%w% h%h% vb14 gAdd, Infection
+Gui, Add, Button, x%x3% y%r4% w%w% h%h% vb15 gAdd, Payment
+Gui, Add, Button, x%x4% y%r4% w%w% h%h% vb16 gAdd, Firewall
 ; row 5
-Gui, Add, Button, x%x1% y%r5% w%w% h%h% vb17, Scan
-Gui, Add, Button, x%x2% y%r5% w%w% h%h% vb18, Fastsupport
-Gui, Add, Button, x%x3% y%r5% w%w% h%h% vb19, Logmein
-Gui, Add, Button, x%x4% y%r5% w%w% h%h% vb20, Press 1 secure business lines
+Gui, Add, Button, x%x1% y%r5% w%w% h%h% vb17 gAdd, Scan
+Gui, Add, Button, x%x2% y%r5% w%w% h%h% vb18 gAdd, Fastsupport
+Gui, Add, Button, x%x3% y%r5% w%w% h%h% vb19 gAdd, Logmein
+Gui, Add, Button, x%x4% y%r5% w%w% h%h% vb20 gAdd, Press 1 secure business lines
 ; row 6
-Gui, Add, Button, x%x1% y%r6% w%w% h%h% vb21, Windows Key (4 flags) + R
-Gui, Add, Button, x%x2% y%r6% w%w% h%h% vb22, Secure Server
-Gui, Add, Button, x%x3% y%r6% w%w% h%h% vb23, cmd.exe
-Gui, Add, Button, x%x4% y%r6% w%w% h%h% vb24, tree
-
-Gui, Add, Button, x%x1% y%hh% w%bw% h%x1% gBarSplit
+Gui, Add, Button, x%x1% y%r6% w%w% h%h% vb21 gAdd, Windows Key (4 flags) + R
+Gui, Add, Button, x%x2% y%r6% w%w% h%h% vb22 gAdd, Secure Server
+Gui, Add, Button, x%x3% y%r6% w%w% h%h% vb23 gAdd, cmd.exe
+Gui, Add, Button, x%x4% y%r6% w%w% h%h% vb24 gAdd, tree
 
 Gui, Show, w%ww% h%eb%, Tech Support Scammer Bingo
 return
 
-GuiClose:
-ExitApp
+Add:
+count += 1
+tooltip, %count%
+sleep, 100
+tooltip
 return
 
-BarSplit:
-MsgBox, please don't click me owo
+GuiClose:
+ExitApp
 return
