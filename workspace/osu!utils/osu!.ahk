@@ -44,6 +44,7 @@ sleep, 100
 return
 
 NumpadDot::LButton
+Numpad9::Escape
 
 #IfWinActive
 	
