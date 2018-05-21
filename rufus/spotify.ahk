@@ -23,7 +23,7 @@ Spotify_HotkeySend(hotkeyString) {
 	ControlSend, , %hotkeyString%, ahk_id %winId%
 	DetectHiddenWindows, Off
 	return
-}
+} 
 
 ; FUNCTION: Get the ID of the Spotify window (using cache)
 Get_Spotify_Id() {
