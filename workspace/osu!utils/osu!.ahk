@@ -43,11 +43,13 @@ sendInput, {Enter Up}
 sleep, 100
 return
 
+z::Numpad2
+x::Numpad1
 NumpadDot::LButton
 Numpad9::Escape
 
 #IfWinActive
-	
+
 /*
 	ImageSearch, aX, aY, 0, 0, A_ScreenWidth, A_ScreenHeight, A.png
 	ImageSearch, bX, bY, 0, 0, A_ScreenWidth, A_ScreenHeight, B.png
