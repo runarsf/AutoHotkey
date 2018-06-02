@@ -43,8 +43,8 @@ sendInput, {Enter Up}
 sleep, 100
 return
 
-z::Numpad2
-x::Numpad1
+;z::Numpad2
+;x::Numpad1
 NumpadDot::LButton
 Numpad9::Escape
 
