@@ -35,7 +35,7 @@ return
 AppsKey::
 IniRead, mods, osumods.ini, txtmods, osumods
 sleep, 100
-SendInput, {!}recommend %mods%
+SendInput, {!}r %mods%
 sleep, 100
 sendInput, {Enter Down}
 sleep, 25
