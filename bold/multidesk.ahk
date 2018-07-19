@@ -1,4 +1,5 @@
 ﻿; Globals
+#SingleInstance,Force
 DesktopCount = 2        ; Windows starts with 2 desktops at boot
 CurrentDesktop = 1      ; Desktop count is 1-indexed (Microsoft numbers them this way)
 menu, tray, icon, shell32.dll, 257												; Changes the tray icon
@@ -6,6 +7,8 @@ menu, tray, icon, shell32.dll, 257												; Changes the tray icon
 ToolTip, multidesk.ahk launched, 1910, 1070											; Display tooltip
 SetTimer, RemoveToolTip, 5000													; Set the length of the tooltip
 return
+
+#+r::reload
 
 RemoveToolTip:																	; Define RemoveToolTip
 SetTimer, RemoveToolTip, Off

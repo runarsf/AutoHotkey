@@ -18,6 +18,7 @@ workAreaHeight := workAreaBottom - workAreaTop
 wa := workAreaWidth - 43
 ha := workAreaHeight - 43
 
+Gui, Font, cWHITE
 Gui, Add, Edit, w%wa% r1 vURLBar,
 /*	Hidden ok button that triggers on enter
 */
