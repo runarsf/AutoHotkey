@@ -49,7 +49,7 @@ maingui() {
 	Gui, Font, s14 cWhite, Consolas
 	Gui, Add, Text, Center y37 vTextInsert, '    '
 	
-	Gui, Show, w100 h100, indicator
+	Gui, Show, w50 h0, indicator
 	
 	WinMove, ahk_exe AutoHotkey.exe,, %WinPosX%, %WinPosY%
 }
