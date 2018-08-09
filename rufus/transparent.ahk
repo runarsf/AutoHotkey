@@ -1,0 +1,1 @@
+﻿Winset, Transparent, 255, ahk_class CabinetWClass
