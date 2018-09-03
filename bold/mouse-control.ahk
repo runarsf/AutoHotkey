@@ -38,16 +38,3 @@ If GetKeyState("CapsLock","T")
 Else
 	Send % "{" . A_ThisHotKey . "}"
 return
-
-; x::Numpad1
-; z::Numpad2
-
-NumpadIns::MouseClick, left
-
-NumpadDel::MouseClick, right
-
-Numpad0::MouseClick, left
-
-NumpadDot::MouseClick, right
-
-Esc::ExitApp
